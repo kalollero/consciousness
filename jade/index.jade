@@ -58,10 +58,11 @@ html(lang="en")
 
                 div.content-row
                     div.col-media
-                        div.media-preview(onclick="openModal('assets/carrouseles/Carrousel_A_1.jpg', 'image')")
-                            img(src='assets/carrouseles/Carrousel_A_1.jpg', alt='Quote')  
-                            div.overlay Click para ampliar
+                        div.media-preview(onclick="openModal(['assets/carrousel/slide_a_1.jpg', 'assets/carrousel/slide_a_2.jpg', 'assets/carrousel/slide_a_3.jpg', 'assets/carrousel/slide_a_4.jpg', 'assets/carrousel/slide_a_5.jpg'], 'carousel')")
+                            img(src="assets/carrousel/slide_a_1.jpg")
+                            div.overlay Ver Carrusel
                         p.tag #CARROUSEL
+
                    
                     div.col-text.carrousel
                         p.mini-title Imagen 1
@@ -154,11 +155,13 @@ html(lang="en")
                             br
                             | #Inspiracion
              
-                
-        div#mediaModal.modal(onclick='closeModal()')
-            span.close &times;          
-            div.modal-content(onclick='event.stopPropagation()')
-                #modalBody
 
+        
+        div#mediaModal.modal
+            span.close(onclick="closeModal()") &times;
+            div.modal-container
+                button#prevBtn.nav-btn(onclick="changeSlide(-1)") &#10094;
+                div#modalBody
+                button#nextBtn.nav-btn(onclick="changeSlide(1)") &#10095;
 
-        script(src='script.js')
+        script(src='js/script.js')

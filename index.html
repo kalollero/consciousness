@@ -44,8 +44,8 @@
         </div>
         <div class="content-row">
           <div class="col-media">
-            <div class="media-preview" onclick="openModal('assets/carrouseles/Carrousel_A_1.jpg', 'image')"><img src="assets/carrouseles/Carrousel_A_1.jpg" alt="Quote">
-              <div class="overlay">Click para ampliar</div>
+            <div class="media-preview" onclick="openModal(['assets/carrousel/slide_a_1.jpg', 'assets/carrousel/slide_a_2.jpg', 'assets/carrousel/slide_a_3.jpg', 'assets/carrousel/slide_a_4.jpg', 'assets/carrousel/slide_a_5.jpg'], 'carousel')"><img src="assets/carrousel/slide_a_1.jpg">
+              <div class="overlay">Ver Carrusel</div>
             </div>
             <p class="tag">#CARROUSEL</p>
           </div>
@@ -87,11 +87,13 @@
         </div>
       </div>
     </section>
-    <div class="modal" id="mediaModal" onclick="closeModal()"><span class="close">&times;          </span>
-      <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal" id="mediaModal"><span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-container">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">&#10094;</button>
         <div id="modalBody"></div>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">&#10095;</button>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

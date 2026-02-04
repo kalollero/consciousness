@@ -1,17 +1,66 @@
+// VARIABLES PARA EL CARRUSEL
+let currentImages = [];
+let currentIndex = 0;
 
-// Abrir Modal con contenido
+
+// 2. LÓGICA DEL MODAL (IMAGEN, VIDEO Y CARRUSEL)
 function openModal(src, type) {
     const modal = document.getElementById("mediaModal");
     const body = document.getElementById("modalBody");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
 
-    body.innerHTML = type === 'video'
-        ? `<video src="${src}" controls autoplay style="width:100%; max-height:80vh;"></video>`
-        : `<img src="${src}" style="width:100%; max-height:80vh; object-fit:contain;">`;
+    modal.style.display = "flex";
+    body.innerHTML = ""; // Limpiar contenido previo
 
-    modal.style.display = "block";
+    if (type === 'video') {
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        body.innerHTML = `<video src="${src}" controls autoplay style="width:100%"></video>`;
+    }
+    else if (type === 'image') {
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        body.innerHTML = `<img src="${src}" style="width:100%; border-radius:10px;">`;
+    }
+    else if (type === 'carousel') {
+        // Aquí 'src' debe ser un array: ['img1.jpg', 'img2.jpg']
+        currentImages = src;
+        currentIndex = 0;
+        prevBtn.style.display = "block";
+        nextBtn.style.display = "block";
+        updateCarousel();
+    }
 }
 
+// 3. ACTUALIZAR IMAGEN DEL CARRUSEL
+function updateCarousel() {
+    const body = document.getElementById("modalBody");
+    body.innerHTML = `
+        <img src="${currentImages[currentIndex]}" style="width:100%; border-radius:10px; animation: fadeIn 0.3s">
+        <div style="color:white; text-align:center; margin-top:10px;">
+            ${currentIndex + 1} / ${currentImages.length}
+        </div>
+    `;
+}
+
+// 4. CAMBIAR SLIDE (FLECHAS)
+function changeSlide(direction) {
+    currentIndex += direction;
+    if (currentIndex >= currentImages.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = currentImages.length - 1;
+    updateCarousel();
+}
+
+// 5. CERRAR MODAL
 function closeModal() {
-    document.getElementById("mediaModal").style.display = "none";
-    document.getElementById("modalBody").innerHTML = ""; // Limpiar para detener video
+    const modal = document.getElementById("mediaModal");
+    const body = document.getElementById("modalBody");
+    modal.style.display = "none";
+    body.innerHTML = ""; // Detiene videos al cerrar
 }
+
+// 6. CERRAR CON TECLA ESCAPE
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeModal();
+});
