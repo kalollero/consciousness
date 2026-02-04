@@ -22,7 +22,7 @@ body {
 .content-table {
     width: 100vw;
     margin: 0 0 20px 0;
-    
+
     container-type: inline-size;
     container-name: container;
 }
@@ -41,9 +41,7 @@ body {
     z-index: 1;
 }
 
-.content-grid {
-    
-}
+.content-grid {}
 
 
 .content-row {
@@ -74,7 +72,7 @@ body {
 .col-text.quote {
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -178,8 +176,14 @@ body {
 @container container (max-width: 576px) {}
 
 @container container (max-width: 992px) {
-    .desktop {display:none;}
-    .movil {grid-template-columns: 40% 60%;}
+    .desktop {
+        display: none;
+    }
+
+    .movil {
+        grid-template-columns: 40% 60%;
+    }
+
     .content-row {
         display: grid;
         grid-template-columns: 40% 60%;
@@ -214,4 +218,10 @@ body {
     }
 }
 
-@container container (max-width: 1200px) {}
+@container container (min-width: 993px) {
+    .desktop {}
+
+    .movil {
+        display: none;
+    }
+}
