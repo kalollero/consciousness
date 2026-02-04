@@ -1,0 +1,164 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet")
+        link(rel="stylesheet", href="css/reboot.css")
+        link(rel="stylesheet", href="css/style.css")
+
+    body
+        header.main-header
+            h1 Lucy Castillo
+            p 2026
+
+        section.content-table
+            div.table-header.desktop
+                div POST
+                div DESCRIPCIÓN
+                div COPY
+            
+            div.table-header.movil
+                div POST
+                div DESCRIPCIÓN & COPY
+
+            div#content-grid              
+                
+                div.content-row
+                    div.col-media
+                        div.media-preview(onclick="openModal('assets/images/Post_01.jpg', 'image')")
+                            img(src='assets/images/Post_01.jpg', alt='Quote')  
+                            div.overlay Click para ampliar
+                        p.tag #POST
+                   
+                    div.col-text.quote
+                        h3 ¿Y SI EL AMOR DE TU VIDA FUERAS TÚ?
+                        
+                    div.col-copy
+                        p A menudo nos han enseñado a buscar a nuestra "media naranja" para sentirnos completos. En Access, sabemos que tú ya eres la naranja completa. ¿Qué pasaría si hoy eligieras comprometerte contigo antes que con cualquier otra persona?
+                            | ·
+                            br 
+                            | ·
+                            br 
+                            | ·
+                            br 
+                            | ·
+                            br 
+                            | ·
+                            br
+                            | #AccessConsciousness
+                            br
+                            | #AmorPropio
+                            br
+                            | #Eleccion
+
+                div.content-row
+                    div.col-media
+                        div.media-preview(onclick="openModal('assets/carrouseles/Carrousel_A_1.jpg', 'image')")
+                            img(src='assets/carrouseles/Carrousel_A_1.jpg', alt='Quote')  
+                            div.overlay Click para ampliar
+                        p.tag #CARROUSEL
+                   
+                    div.col-text.carrousel
+                        p.mini-title Imagen 1
+                        p ¿Te has casado contigo mismo?
+                        br
+
+                        p.mini-title Imagen 2
+                        p Honrarte no es ser egoísta. Es reconocer que si tú no estás presente en tu vida, nadie más puede estarlo realmente.
+                        br
+
+                        p.mini-title Imagen 3
+                        p Tres preguntas para empezar este "matrimonio":
+                            br
+                            | ¿Qué me gustaría crear para mí hoy?
+                            br
+                            | ¿Qué puedo ser hoy que me haga sonreír?
+                            br
+                            | ¿Cómo puedo honrar a mi cuerpo en este momento?
+                        br
+
+                        p.mini-title Imagen 4
+                        p Cuando te honras, dejas de pedirle a los demás que llenen tus vacíos. Te conviertes en una invitación a la consciencia.
+                        br
+
+                        p.mini-title Imagen 5
+                        p Empieza declarando:
+                            | ELIJO MI GRANDEZA si hoy eliges ser tu prioridad.
+
+                        
+                    div.col-copy
+                        p A menudo nos han enseñado a buscar a nuestra "media naranja" para sentirnos completos. En Access, sabemos que tú ya eres la naranja completa. ¿Qué pasaría si hoy eligieras comprometerte contigo antes que con cualquier otra persona?
+                            | ·
+                            br 
+                            | ·
+                            br 
+                            | ·
+                            br 
+                            | ·
+                            br 
+                            | ·
+                            br
+                            | #AccessConsciousness
+                            br
+                            | #AmorPropio
+                            br
+                            | #Eleccion
+
+                div.content-row
+                    div.col-media                        
+                        div.media-preview(onclick="openModal('assets/videos/Reel_01.mp4', 'video')")
+                            video(src='assets/videos/Reel_01.mp4', muted='')                             
+                            div.overlay Click para ampliar
+                        p.tag #REEL
+                    
+                    div.col-text.reel
+                        p.mini-title Audio (Voz en off)
+                        p "A veces pasamos la vida entera esperando que alguien llegue a rescatarnos, a validarnos o a decirnos que somos suficientes. Pero, ¿qué tal si ese alguien ya está aquí? ¿Qué tal si el compromiso más expansivo que puedes hacer es contigo? Baja tus barreras, reconócete y pregúntate: ¿Qué regalo soy para el mundo que no he reconocido aún? Todo en la vida llega a mí con facilidad, gozo y gloria."
+                       
+  
+                    div.col-copy
+                        p Baja tus barreras. Respira.
+                            br
+                            br
+                            | A veces el ruido del mundo nos hace olvidar que la relación más importante que tendremos jamás es la que tenemos con nosotros mismos. Si dejas de juzgarte por solo 10 segundos... ¿qué descubrirías de ti?
+                            br
+                            br
+                            | ¿Qué tal si hoy eliges ser tu mayor prioridad?
+                            br
+                            br
+                            | Todo en la vida llega a mí con facilidad, gozo y gloria. 
+                            | ·
+                            br
+                            | ·
+                            br
+                            | ·
+                            br
+                            | ·
+                            br
+                            | ·
+                            br
+                            | ·
+                            br
+                            | #Gratitud
+                            br
+                            | #Expansion
+                            br
+                            | #SerTu
+                            br
+                            | #AccessTools
+                            br
+                            | #Inspiracion
+             
+                
+        div#mediaModal.modal(onclick='closeModal()')
+            span.close &times;          
+            div.modal-content(onclick='event.stopPropagation()')
+                #modalBody
+
+
+        script(src='script.js')
