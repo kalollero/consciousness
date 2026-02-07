@@ -3,6 +3,8 @@
     --gold: #C5A059;
     --dark: #2c2c2c;
     --light-grey: #f4f4f4;
+    --border: rgb(118, 118, 118);
+    
 }
 
 body {
@@ -33,7 +35,7 @@ body {
     background: var(--light-grey);
     padding: 15px;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     letter-spacing: 1px;
     text-align: center;
     position: sticky;
@@ -78,6 +80,10 @@ body {
 
 .col-text,
 .col-copy {
+    font-weight: 400;
+}
+
+.col-text h6 {
     font-weight: 400;
 }
 
@@ -258,13 +264,13 @@ body.modal-open {
     }
 
     .movil {
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 45% 55%;
     }
 
     .content-row {
         display: grid;
-        grid-template-columns: 40% 60%;
-        border-bottom: 1px solid #eee;
+        grid-template-columns: 45% 55%;
+        border-bottom: 1px solid rgb(118, 118, 118);
         padding: 20px 10px;
     }
 
@@ -277,7 +283,20 @@ body.modal-open {
         grid-column: 2/3;
         grid-row: 1;
         padding: 0 20px 20px;
+        border-bottom: 1px;
+        position: relative;
     }
+
+    .col-text::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10%; /* (100% - 85%) / 2 para centrarlo */
+        width: 80%;
+        height: .5px; /* Este sería el "grosor" de tu borde */
+        background-color: var(--border); /* El color del borde */
+    }
+
 
     .col-copy {
         grid-column: 2/3;
@@ -293,6 +312,12 @@ body.modal-open {
         width: 100%;
         margin-top: 10px;
     }
+
+    .col-text {
+        
+    }
+
+    
 
     /* Opcional: Ocultar flechas en móviles si el swipe ya funciona */
     #prevBtn,
