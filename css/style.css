@@ -4,7 +4,7 @@
     --dark: #2c2c2c;
     --light-grey: #f4f4f4;
     --border: rgb(118, 118, 118);
-    
+
 }
 
 body {
@@ -291,10 +291,13 @@ body.modal-open {
         content: "";
         position: absolute;
         bottom: 0;
-        left: 10%; /* (100% - 85%) / 2 para centrarlo */
+        left: 10%;
+        /* (100% - 85%) / 2 para centrarlo */
         width: 80%;
-        height: .5px; /* Este sería el "grosor" de tu borde */
-        background-color: var(--border); /* El color del borde */
+        height: 1px;
+        /* Este sería el "grosor" de tu borde */
+        background-color: var(--border);
+        /* El color del borde */
     }
 
 
@@ -313,11 +316,9 @@ body.modal-open {
         margin-top: 10px;
     }
 
-    .col-text {
-        
-    }
+    .col-text {}
 
-    
+
 
     /* Opcional: Ocultar flechas en móviles si el swipe ya funciona */
     #prevBtn,
