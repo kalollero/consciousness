@@ -222,6 +222,10 @@ line-height: 1.25rem;
     cursor: pointer;
 }
 
+/* Post realizados */
+.none {
+    display: none !important;
+}
 
 
 /* 1. Bloquea el scroll del fondo cuando el modal está abierto */
